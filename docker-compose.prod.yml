@@ -2,6 +2,9 @@ version: "3.8"
 
 services:
   web:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.prod
     image: "${WEB_IMAGE}"
     command: gunicorn hello_django.wsgi:application --bind 0.0.0.0:8000
     volumes:
@@ -16,7 +19,7 @@ services:
       - static_volume:/usr/src/app/staticfiles
       - media_volume:/usr/src/app/mediafiles
     ports:
-      - 80:80
+      - 8081:80
     depends_on:
       - web
 
