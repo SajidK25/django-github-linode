@@ -6,7 +6,7 @@ from django.http import JsonResponse
 
 
 def home(request):
-    return JsonResponse({"hello": "World"})
+    return JsonResponse({"hello": "Django"})
 
 def about(request):
     return JsonResponse({"hello": "World"})
