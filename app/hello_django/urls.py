@@ -8,9 +8,11 @@ from django.http import JsonResponse
 def home(request):
     return JsonResponse({"hello": "World"})
 
-
+def about(request):
+    return JsonResponse({"hello": "World"})
 urlpatterns = [
     path('', home, name='home'),
+    path('/about', about, name='about'),
     path('admin/', admin.site.urls),
 ]
 
